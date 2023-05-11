@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js" defer></script>
+  <title>Document</title>
+</head>
+<body>
+  
+  <h1>¡Bienvenido!</h1>
+  <p>Ingrese su destino:</p>
+  <form id="search">
+    <label for="destinations">Destino:</label>
+    <select id="destinations" name="destination">
+      <option value="Buenos Aires">Buenos Aires</option> <!-- Optimizar esto, hacer que tome los valores del JSON con un for-->
+      <option value="Catamarca">Catamarca</option>
+      <option value="Chaco">Chaco</option>
+      <option value="Chubut">Chubut</option>
+      <option value="Córdoba">Córdoba</option>
+      <option value="Corrientes">Corrientes</option>
+      <option value="Entre Ríos">Entre Ríos</option>
+      <option value="Formosa">Formosa</option>
+      <option value="Jujuy">Jujuy</option>
+      <option value="La Pampa">La Pampa</option>
+      <option value="La Rioja">La Rioja</option>
+      <option value="Mendoza">Mendoza</option>
+      <option value="Misiones">Misiones</option>
+      <option value="Neuquén">Neuquén</option>
+      <option value="Río Negro">Río Negro</option>
+      <option value="Salta">Salta</option>
+      <option value="San Juan">San Juan</option>
+      <option value="San Luis">San Luis</option>
+      <option value="Santa Cruz">Santa Cruz</option>
+      <option value="Santa Fe">Santa Fe</option>
+      <option value="Santiago del Estero">Santiago del Estero</option>
+      <option value="Tierra del Fuego">Tierra del Fuego</option>
+      <option value="Tucumán">Tucumán</option>
+    </select>
+    <button type="submit">Buscar</button>
+  </form>
+  
+  <!-- Aca van a aparecer los hoteles y actividades -->
+  <div id="results"></div>
+  
+
+</body>
+</html>
