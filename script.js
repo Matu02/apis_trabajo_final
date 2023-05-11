@@ -1,4 +1,6 @@
-//Script que sube automáticamente los datos de las provincias a la base de datos. Para correlrlo hay que poner node script.js y se suben los datos del JSON que se llama destinations.json
+//Script que sube automáticamente los datos de las provincias a la base de datos. 
+//Para correrlo hay que poner node script.js en le terminal y se suben los datos del JSON que se llama destinations.json
+
 const MongoClient = require('mongodb').MongoClient;
 const fs = require('fs');
 
