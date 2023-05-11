@@ -1,23 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <script type= "module" src="login.js" defer></script>
-  <title>Iniciar Sesión</title>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+        <title>Inicio de Sesión</title>
+        <link rel="stylesheet" href="login.css"/>
+        <link rel="icon" type="image/x-icon" href="multimedia/imgs/favicon.png">
+    </head>
+    <body>
+         <div class="container">  
+             <div class="form-box">
+                    <div class="button-box">
+                        <div id="elegir"> </div>
+                            <button type="button" class="toggle-btn" onclick="login_des()"> Iniciar Sesión</button>
+                            <button type="button" class="toggle-btn" onclick="signup_des()">Registrar</button>
+                    </div>
+                    <form id="login" class="input-group">
+                        <input type="text" class="input-field" id="nombre-login" placeholder="Nombre de Usuario" >
+                        <input type="password" class="input-field" id="password-login" placeholder="Contraseña" >
+                        <input type="checkbox" class="check-box" required><span>Recordar Contraseña</span>
+                        <button type="submit" class="submit-btn">Acceder</button>
+                        <p class="warning" id="alerta_login"></p>
+                        
+                    </form>
+                    <form id="signup" class="input-group">
+                        <input type="text" class="input-field" id="nombre-signup" placeholder="Nombre de Usuario" >
+                        <input type="email" class="input-field" id="email-signup"placeholder="Correo" >
+                        <input type="password" class="input-field" id="password-signup" placeholder="Contraseña">
+                        <input type="checkbox" class="check-box1" required><span>Acepto los términos y Condiciones</span>
+                        <button type="submit" class="submit-btn" >Registrar</button>
+                       
+                        <p class="warning" id="alerta_signup"></p>
 
-</head>
-<body>
-
-  <h1>Login</h1>
-  <form id="login-form">
-    <input type="text" id="username" placeholder="Username">
-    <input type="password" id="password" placeholder="Password">
-    <input type="submit" value="Login">
-  </form>
-
-  
-</body>
+                    </form>
+                </div>
+             </div>
+    </body>
 </html>
+<script src="login.js"></script>
