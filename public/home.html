@@ -13,9 +13,10 @@
   <h1>¡Bienvenido!</h1>
   <p>Ingrese su destino:</p>
   <form id="search">
-    <label for="destinations">Destino:</label>
-    <select id="destinations" name="destination">
-      <option value="Buenos Aires">Buenos Aires</option> <!-- Optimizar esto, hacer que tome los valores del JSON con un for-->
+    Destino deseado: <input type="text" id="destination-input"/>
+      <input type="submit" value="Search!">
+    <!-- <select id="destinations" name="destination">
+      <option value="Buenos Aires">Buenos Aires</option> Optimizar esto, hacer que tome los valores del JSON con un for
       <option value="Catamarca">Catamarca</option>
       <option value="Chaco">Chaco</option>
       <option value="Chubut">Chubut</option>
@@ -38,13 +39,33 @@
       <option value="Santiago del Estero">Santiago del Estero</option>
       <option value="Tierra del Fuego">Tierra del Fuego</option>
       <option value="Tucumán">Tucumán</option>
-    </select>
-    <button type="submit">Buscar</button>
+    </select> -->
+    
   </form>
   
   <!-- Aca van a aparecer los hoteles y actividades -->
-  <div id="results"></div>
+
+  <div id="results" class="hidden">
+    <h2>Resultados para <span id="destination-name"></span></h2>
+    
+    <h3>Hoteles</h3>
+    <ul id="hotel-list">
+      <li id="hotel-item">
+        <h4 id="hotel-name"></h4>
+        <p id="hotel-address"></p>
+        <p id="hotel-price"></p>
+      </li>
+    </ul>
   
+    <h3>Actividades</h3>
+    <ul id="activities-list">
+      <li id="activity-item">
+        <h4 id="activity-name"></h4>
+        <p id="activity-description"></p>
+        <p id="activity-price"></p>
+      </li>
+    </ul>
+  </div> 
 
 </body>
 </html>
