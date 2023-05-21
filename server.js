@@ -3,8 +3,7 @@ import passport from 'passport';
 import db from './db.js';
 import path from 'path';
 import fs from 'fs';
-import AuthorizationLocal from "./auth.js"
-import AuthorizationGoogle from "./auth.js"
+import {AuthorizationGoogle, AuthorizationLocal} from './auth.js';
 
 const __dirname = fs.realpathSync('.');
 
@@ -21,12 +20,20 @@ class AgendaBackendServer {
     
     app.get('/login/', this._login);//Este es para local y para google
 
+////////////////////////////////////LOCAL///////////////////////////////////////////
+
+    app.get('/', this._authLocal.checkAuthenticated, this._goHome); //authorization._verify funcion intermedia entre traer / ¿? y ejecutar la funcion goHome
+    app.post(`/login/`, passport.authenticate(`local`, {failureRedirect: `/login`}))//Hago que passport autentique sino vuelve a login. Funcion intermedia autentificacion, quiero que autentique al usuario
+
 ////////////////////////////////////GOOGLE///////////////////////////////////////////
     app.get('/auth/google/',
       passport.authenticate('google', {
         scope: ['email', 'profile']//esto es lo que le pido a google
-      })
-    );
+      }));
+    app.get('/auth/google/callback', passport.authenticate('google', { //Recibe la autentificación que hace google
+      successRedirect: '/', //Si la autentificación es correcta, te manda al home
+      failureRedirect: '/login' //Si la autentificación es incorrecta, te manda de nuevo al login
+    }));
     app.get('/', this._authGoogle.checkAuthenticated, this._goHome);
 
     app.post("/logout", (req, res) => {
@@ -37,17 +44,6 @@ class AgendaBackendServer {
       });
       res.redirect("/login");
     });     
-
-    ////////////////////////////////////GOOGLE///////////////////////////////////////////
-
-   ////////////////////////////////////LOCAL///////////////////////////////////////////
-
-   app.get('/', authorization._verify, this._goHome); //authorization._verify funcion intermedia entre traer / ¿? y ejecutar la funcion goHome
-   app.post(`/login`, passport.authenticate(`local`, {failureRedirect: `/login`}))//Hago que passport autentique sino vuelve a login. Funcion intermedia autentificacion, quiero que autentique al usuario
-
-   ////////////////////////////////////LOCAL///////////////////////////////////////////
-   
-   
 
 
     // Start server
@@ -75,6 +71,19 @@ class AgendaBackendServer {
     };
     res.json(response);
   }
+
+  // async _doUserLookup(req, res){
+  //   const routeParams = req.params;
+  //   const user = routeParams.username; 
+  //   const query = { username: user.toLowerCase() }; 
+  //   const usersCollection = db.collection("users"); 
+  //   const storedUser = await usersCollection.findOne(query);
+  //   const response = { //Respuesta que vuelve al frontend
+  //     username: storedUser.username, 
+  //     password: storedUser.password
+  //   };
+  //   res.json(response);
+  // }
 
 }
 

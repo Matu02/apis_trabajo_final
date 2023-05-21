@@ -21,18 +21,18 @@ function signup_des(){
 */
 class Login {
     constructor() {  
-      const loginForm = document.querySelector('#login-form');
+      const loginForm = document.querySelector('#login-form'); //Selecciona el formulario del HTML
       this._doLogin = this._doLogin.bind(this);
-      loginForm.addEventListener('submit', this._doLogin);
+      loginForm.addEventListener('submit', this._doLogin); //Escucha cuando se da el evento sumbit en el input (que seria apretar el boton)
     }
 
     _doLogin(event) {
         event.preventDefault();
-        const username = document.querySelector("#usename");
-        const password = document.querySelector("#password");
+        const username = document.querySelector("#username").value;
+        const password = document.querySelector("#password").value;
         const loginBody = {
-            username: user,
-            password: pass
+            username: username,
+            password: password
         };
 
         const fetchOptions = {
@@ -46,7 +46,7 @@ class Login {
         
         
         return fetch('/login/', fetchOptions)
-            .then(user =>   window.location.href = '/');
+            .then(user =>  window.location.href = '/');
     }
 }
 // Init app

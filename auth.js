@@ -2,6 +2,7 @@ import passport from 'passport';
 import GoogleStrategy from 'passport-google-oauth2';
 import session from 'express-session';
 import LocalStrategy from 'passport-local';
+import users from './users.js';
 
 class AuthorizationGoogle {
     constructor(app) {
@@ -87,5 +88,4 @@ class AuthorizationLocal{
     }
 
 }
-export { AuthorizationGoogle };
-export { AuthorizationLocal };
+export {AuthorizationGoogle, AuthorizationLocal};
