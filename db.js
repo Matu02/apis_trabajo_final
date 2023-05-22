@@ -11,6 +11,6 @@ try { //trata de conectarse a la base de datos
   console.error(e);
 }
 
-let db = conn.db("trabajoViajes"); //Nombre de la db
+let db = conn.db("trabajoViajes"); //Guardo la base de datos "trabajoViajes" en la variable db
 
 export default db;
