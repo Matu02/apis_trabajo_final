@@ -1,115 +1,77 @@
-*{
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-  font-family:sans-serif
+/* Estilos para el contenedor principal */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f1f1f1;
+  font-family: Arial, sans-serif;
 }
 
-.container{
-  width: 100%;
-  height: 100%;
-  background-image:url(multimedia/imgs/login.jpg);
-  background-position: center;
-  background-size: cover;
-  position: absolute;
-}
-
-.form-box{
-  width: 390px;
-  height: 460px;
-  position: relative;
-  margin: 10% auto;
-  background-color: white;
-  padding: 10px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-.button-box{
-  width: 260px;
-  margin: 30px auto;
-  position: relative;
-  border-radius: 30px;
-  box-shadow: 0 0 20px 9px #b9b7b0;
-}
-.toggle-btn{
-  padding: 15px 25px;
-  cursor: pointer;
-  background: transparent;
-  border: 0px;
-  outline: none;
-  position: relative;
-  font-size: 14px;
-}
-
-#elegir{
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: 130px;
-  height: 100%;
-  border-radius: 30px;
-  border-color: #25757f;
-  background: linear-gradient(to right, rgba(32, 109, 114, 0.859), rgba(50, 164, 172, 0.859));
-  transition: 1s;
-}
-.input-group{
-  top: 160px;
-  position: absolute;
-  width: 280px;
-  transition: 1s;
-}
-
-.input-field{
-  width: 100%;
-  padding: 10px 0;
-  margin: 5px 0;
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  border-bottom: 2px solid #147575;
-  outline: none;
-  background: transparent;
-}
-
-.submit-btn{
-  width: 95%;
-  padding: 13px 33px;
-  cursor: pointer;
-  display:block;
-  margin-left: 26px;
-  background: linear-gradient(to right, rgba(32, 109, 114, 0.859), rgba(50, 164, 172, 0.859));
-  border: 0px;
-  outline: none;
-  border-radius: 30px;
-  font-size: 14px;
-}
-
-.check-box{
-  margin: 25px 10px 24px 0;
-  color: #dbbd71;
-  font-size: 13px;
-}
-.check-box1{
-  margin: 25px 10px 24px 0;
-  color: #dbbd71;
-  font-size: 1px;
-}
-
-
-#login{
-  left: 50px;
-}
-
-#signup{
-  left: 450px;
-}
-
-.warning{
-  width: 200px;
+/* Estilos para el título "Login" */
+h1 {
   text-align: center;
-  margin: auto;
-  color: rgb(243, 222, 39);
-  padding-top: 20px;
-  padding-left: 35px;
-  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el contenedor del formulario */
+.form-box {
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Estilos para el formulario */
+#login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos para los campos de entrada */
+#login-form input[type="text"],
+#login-form input[type="password"] {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Estilos para el botón de enviar */
+#login-form input[type="submit"] {
+  padding: 10px;
+  font-weight: 700;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Estilos para el botón de enviar al pasar el mouse */
+#login-form input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Estilos para el botón "Login with Google" */
+#google-login {
+  display: block;
+  width: 258.4px;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f7f7f7;
+  color: #333;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilos para el botón "Login with Google" en estado hover */
+#google-login:hover {
+  background-color: #eee;
 }

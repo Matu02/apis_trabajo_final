@@ -1,0 +1,111 @@
+/* Estilos para el contenedor principal */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* Estilos para el título principal */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el formulario de búsqueda */
+#search {
+  margin-bottom: 20px;
+}
+
+/* Estilos para el campo de entrada de destino */
+#destination-input {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Estilos para el botón de búsqueda */
+#search input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  font-weight: 500;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Estilos para los resultados */
+#results {
+  margin-top: 20px;
+}
+
+/* Estilos para los títulos de sección */
+h2 {
+  margin-bottom: 10px;
+}
+
+/* Estilos para los hoteles */
+#hotels-container {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hotel {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-right: 10px;
+  flex-basis: calc(50% - 10px); /* Ajusta este valor según el número de hoteles que deseas mostrar en una fila */
+}
+
+.hotel-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.hotel-address {
+  margin-bottom: 5px;
+}
+
+.hotel-price {
+  margin-bottom: 5px;
+}
+
+/* Estilos para las actividades */
+
+#activities-container {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.activity {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  flex-basis: calc(50% - 10px); /* Ajusta este valor según el número de hoteles que deseas mostrar en una fila */
+}
+
+.activity-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.activity-description {
+  margin-bottom: 5px;
+}
+
+.activity-price {
+  margin-bottom: 5px;
+}
+
+
+.hidden{
+  display: none;
+}

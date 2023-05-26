@@ -5,69 +5,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
         <title>Inicio de Sesión</title>
         <link rel="stylesheet" href="login.css"/>
-        <link rel="icon" type="image/x-icon" href="multimedia/imgs/favicon.png">
     </head>
     
-    <!-- Log In Google -->
-    
     <body>
-        <div class="row">
-            <div class="col-md-3">
-              <a id="google-login" class="btn btn-outline-dark" href="/auth/google" role="button" style="text-transform:none"> <!-- Se conecta directo con el servidor de google a /auth/google, xq no necesita el login.js -->
-                <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
-                Login with Google
-              </a>
-              
-            </div>
-          </div>
-          
-          <!-- Minified CSS and JS -->
-          <link   rel="stylesheet" 
-                  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
-                  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
-                  crossorigin="anonymous">
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
-                  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
-                  crossorigin="anonymous">
-          </script>
      
-     <h1>Login</h1>
-     <form id="login-form">
-       <input type="text" id="username" placeholder="Username">
-       <input type="password" id="password" placeholder="Password">
-       <input type="submit" value="Login">
-     </form>
+     <h1>Inicio de Sesión</h1>
+     <div class="form-box"> 
+      <form id="login-form">
+        <input type="text" id="username" placeholder="Usuario">
+        <input type="password" id="password" placeholder="Contraseña">
+        <input type="submit" value="Iniciar Sesión">
+      </form>
+      <div class="row">
+        <div class="col-md-3">
+          <a id="google-login" class="btn btn-outline-dark" href="/auth/google" role="button" style="text-transform:none"> <!-- Se conecta directo con el servidor de google a /auth/google, xq no necesita el login.js -->
+            <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+            Login con Google
+          </a>
+        </div>
+      </div>
+     </div>
 
+     <!-- Minified CSS and JS for Google Login -->
+     <link   rel="stylesheet" 
+     href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+     crossorigin="anonymous">
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
+     crossorigin="anonymous"></script>
 
-        <!-- Log In Local
-
-        <div class="container">  
-             <div class="form-box">
-                    <div class="button-box">
-                        <div id="elegir"> </div>
-                            <button type="button" class="toggle-btn" onclick="login_des()"> Iniciar Sesión</button>
-                            <button type="button" class="toggle-btn" onclick="signup_des()">Registrar</button>
-                    </div>
-                    <form id="login" class="input-group">
-                        <input type="text" class="input-field" id="nombre-login" placeholder="Nombre de Usuario" >
-                        <input type="password" class="input-field" id="password-login" placeholder="Contraseña" >
-                        <input type="checkbox" class="check-box" required><span>Recordar Contraseña</span>
-                        <button type="submit" class="submit-btn">Acceder</button>
-                        <p class="warning" id="alerta_login"></p>
-                        
-                    </form>
-                    <form id="signup" class="input-group">
-                        <input type="text" class="input-field" id="nombre-signup" placeholder="Nombre de Usuario" >
-                        <input type="email" class="input-field" id="email-signup"placeholder="Correo" >
-                        <input type="password" class="input-field" id="password-signup" placeholder="Contraseña">
-                        <input type="checkbox" class="check-box1" required><span>Acepto los términos y Condiciones</span>
-                        <button type="submit" class="submit-btn" >Registrar</button>
-                       
-                        <p class="warning" id="alerta_signup"></p>
-
-                    </form>
-                </div>
-             </div>  -->
     </body>
 </html>
 <script src="login.js"></script> 

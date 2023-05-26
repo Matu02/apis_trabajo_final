@@ -1,12 +1,32 @@
-class Activities { //Esta clase se encarga de mostrar las actividades en el HTML
-  constructor(resultsContainer, activities) {  //Recibe dos parametros, el contenedor donde se va a mostrar la clase y el objeto activities, que tiene los datos que se mostrarán
-    const nameDisplay = resultsContainer.queryselector('#activity-name')
-    const descriptionDisplay = resultsContainer.queryselector('#activity-description')
-    const priceDisplay = resultsContainer.queryselector('#activity-price')
+class Activities {
+  constructor(resultsContainer, activites) {
+    const activitiesContainer = resultsContainer.querySelector('#activities-container');
+    activitiesContainer.innerHTML= '';
     
-    nameDisplay.textContent = activities.name; //Hace que en el nameDisplay se muestre el nombre del objeto activities 
-    descriptionDisplay.textContent = activities.description; //Lo mismo pero con la descripción
-    priceDisplay.textContent = activities.price; //Lo mismo pero con el precio
+    activites.forEach(activity => {
+      const activityElement = document.createElement('div');
+      activityElement.classList.add('activity');
+      
+      const nameElement = document.createElement('h3');
+      nameElement.classList.add('activity-name');
+      nameElement.textContent = activity.name;
+      
+      const descriptionElement = document.createElement('p');
+      descriptionElement.classList.add('activity-description');
+      descriptionElement.innerHTML = `<strong>Descripción:</strong> ${activity.description}`;
+      
+      const priceElement = document.createElement('p');
+      priceElement.classList.add('activity-price');
+      priceElement.innerHTML = `<strong>Nivel de precios:</strong> ${activity.price}`;
+      
+      activityElement.appendChild(nameElement);
+      activityElement.appendChild(descriptionElement);
+      activityElement.appendChild(priceElement);
+      
+      activitiesContainer.appendChild(activityElement);
+    });
+    
+    console.log('Llegaron los actividades a la clase activities');
   }
 }
 

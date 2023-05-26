@@ -1,12 +1,32 @@
 class Hotel {
-  constructor(resultsContainer, hotel) {
-    const nameDisplay = resultsContainer.queryselector('#hotel-name')
-    const addressDisplay = resultsContainer.queryselector('#hotel-address')
-    const priceDisplay = resultsContainer.queryselector('#hotel-price')
+  constructor(resultsContainer, hotels) {
+    const hotelsContainer = resultsContainer.querySelector('#hotels-container');
+    hotelsContainer.innerHTML= '';
     
-    nameDisplay.textContent = hotel.name;
-    addressDisplay.textContent = hotel.address;
-    priceDisplay.textContent = hotel.price;
+    hotels.forEach(hotel => {
+      const hotelElement = document.createElement('div');
+      hotelElement.classList.add('hotel');
+      
+      const nameElement = document.createElement('h3');
+      nameElement.classList.add('hotel-name');
+      nameElement.textContent = hotel.name;
+      
+      const addressElement = document.createElement('p');
+      addressElement.classList.add('hotel-address');
+      addressElement.innerHTML = `<strong>Dirección:</strong> ${hotel.address}`;
+      
+      const priceElement = document.createElement('p');
+      priceElement.classList.add('hotel-price');
+      priceElement.innerHTML = `<strong>Nivel de precios:</strong> ${hotel.price}`;
+      
+      hotelElement.appendChild(nameElement);
+      hotelElement.appendChild(addressElement);
+      hotelElement.appendChild(priceElement);
+      
+      hotelsContainer.appendChild(hotelElement);
+    });
+    
+    console.log('Llegaron los hoteles a la clase Hotel');
   }
 }
 
