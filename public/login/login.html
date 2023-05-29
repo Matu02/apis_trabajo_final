@@ -8,19 +8,13 @@
         <link rel="icon" type="image/x-icon" href="multimedia/imgs/favicon.png">
     </head>
     
-    <!-- Log In Google -->
     
     <body>
-        <div class="row">
-            <div class="col-md-3">
-              <a id="google-login" class="btn btn-outline-dark" href="/auth/google" role="button" style="text-transform:none"> <!-- Se conecta directo con el servidor de google a /auth/google, xq no necesita el login.js -->
-                <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
-                Login with Google
-              </a>
-              
-            </div>
-          </div>
-          
+      <section class="main-page">
+        <nav>
+          <img src="multimedia/imgs/login.jpg">
+        </nav>
+
           <!-- Minified CSS and JS -->
           <link   rel="stylesheet" 
                   href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
@@ -31,15 +25,30 @@
                   crossorigin="anonymous">
           </script>
      
-     <h1>Login</h1>
+     <div class="inicio">
+     <h1>Iniciar Sesión</h1>
      <form id="login-form">
        <input type="text" id="username" placeholder="Username">
        <input type="password" id="password" placeholder="Password">
        <input type="submit" value="Login">
      </form>
+    </div>
 
+   <!-- Log In Google -->
+  
+    <div class="login-google"> 
+     <div class="row">
+      <div class="col-md-3">
+        <a id="google-login" class="btn btn-outline-dark" href="/auth/google" role="button" style="text-transform:none"> <!-- Se conecta directo con el servidor de google a /auth/google, xq no necesita el login.js -->
+          <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+          Login with Google
+        </a>
+        
+      </div>
+    </div>
+  </div>
 
-        <!-- Log In Local
+        <!--Log In Local
 
         <div class="container">  
              <div class="form-box">
@@ -68,6 +77,7 @@
                     </form>
                 </div>
              </div>  -->
+            </section>
     </body>
 </html>
 <script src="login.js"></script> 

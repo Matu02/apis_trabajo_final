@@ -5,6 +5,34 @@
   font-family:sans-serif
 }
 
+.main-page{
+  min-height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.584), rgba(4, 9, 30, 0.616)), url(multimedia/imgs/login.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+.inicio{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+}
+
+h1{
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.login-google{
+  width: 80%;
+  margin: center;
+  text-align: center;
+  padding-top: 100px;
+
+
 .container{
   width: 100%;
   height: 100%;
@@ -113,3 +141,4 @@
   padding-left: 35px;
   font-size: 20px;
 }
+
