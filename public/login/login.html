@@ -5,6 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
         <title>Inicio de Sesión</title>
         <link rel="stylesheet" href="login.css"/>
+        <style>
+          body{
+            background-image: url('descarga.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+          }
+        </style>
     </head>
     
     <!-- Log In Google -->
@@ -21,25 +29,19 @@
                   crossorigin="anonymous">
           </script>
      
-     <h1>Iniciar Sesión</h1>
      <div class="form-center">
      <form id="login-form">
+       <h1 style="margin-bottom: 10px;">Iniciar Sesión</h1>
        <input type="text" id="username" placeholder="Nombre de Usuario" style="margin-bottom: 10px;"> <br/>
        <input type="password" id="password" placeholder="Contraseña" style="margin-bottom: 10px;"><br/>
        <input type="submit" value="Iniciar">
-     </form>
-    </div>
-
-    <div class="row">
-      <div class="col-md-3">
         <a id="google-login" class="btn btn-outline-dark" href="/auth/google" role="button" style="text-transform:none"> <!-- Se conecta directo con el servidor de google a /auth/google, xq no necesita el login.js -->
           <img width="20px" style="margin-bottom:2px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
           Inicia Sesión con Google
         </a>
-
-      </div>
+      </form>
     </div>
-       
+
     </body>
     
 </html>
