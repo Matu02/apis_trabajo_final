@@ -148,29 +148,6 @@ h1{
 }
 
 =======
-/* Estilos para el contenedor principal */
-
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 75vh;
-  font-family: Arial, sans-serif;
-  background-color: #c6fcc9;
-}
-
-/* Estilos para el título "Login" */
-
-
-/* Estilos para el contenedor del formulario */
-.form-box {
-  width: 30px;
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
 
 /* Estilos para el formulario */
 #login-form {
@@ -187,7 +164,7 @@ body {
   position: absolute;
   margin-left: 35%;
   margin-right: 20%;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
 h1 {
@@ -207,7 +184,7 @@ h1 {
   width: 300px;
   background-color: #f7f7f7;
 }
-/*
+
 .form-center {
   position: absolute;
   width: 100%;
@@ -259,4 +236,3 @@ h1 {
 #google-login:hover {
   background-color: #c9c7c7;
 }
->>>>>>> b52b53d1a1d4c54ad7208e6cc4220cf97378e1e5
