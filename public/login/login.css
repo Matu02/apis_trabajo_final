@@ -160,34 +160,36 @@ h1{
 
 =======
 /* Estilos para el título "Login" */
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  padding: 60px;
-}
+
 
 /* Estilos para el contenedor del formulario */
-.form-box {
-  width: 30px;
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
 
 /* Estilos para el formulario */
 #login-form {
   display: flex;
   flex-direction: column;
-  width: 600px;
-
+  width: 400px;
+  height: 420px;
+  padding: 40px;
+  background-color:white;
+  border-radius: 10px;
+  justify-content: center;
+  text-align: center;
+  align-self: center;
+  position: absolute;
+  margin-left: 35%;
+  margin-right: 20%;
+  margin-top: 40px;
 }
 
+h1 {
+  text-align: center;
+  padding-bottom:10px ;
+}
 
 /* Estilos para los campos de entrada */
 #login-form input[type="text"],
 #login-form input[type="password"] {
-  margin-bottom: 20px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -195,20 +197,18 @@ h1 {
   align-self: center;
   justify-content: center;
   width: 300px;
+  background-color: #f7f7f7;
 }
-
+/*
 .form-center {
-  position: relative;
+  position: absolute;
   width: 100%;
-  height: 10em;
+  height: 100px;
+  margin-left: 30%;
+  margin-right: 30%;
+  padding-bottom: 10px;
 }
 
-.form-center form {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
 
 /* Estilos para el botón de enviar */
 #login-form input[type="submit"] {
@@ -219,7 +219,7 @@ h1 {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   width: 300px;
   text-align: center;
   align-self: center;
@@ -231,8 +231,8 @@ h1 {
 }
 
 /* Estilos para el botón "Login with Google" */
+
 #google-login {
-  display: block;
   width: 300px;
   padding: 10px;
   background-color: #f7f7f7;
@@ -242,18 +242,12 @@ h1 {
   cursor: pointer;
   text-decoration: none;
   transition: background-color 0.3s ease;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: 70px;
-  margin-left: auto;
-  margin-right: auto;
-  transform: translate(-50%,-50%);
-
+  text-align: center;
+  align-self: center;
+  justify-content: center;
 }
 
 /* Estilos para el botón "Login with Google" en estado hover */
 #google-login:hover {
   background-color: #eee;
 }
->>>>>>> b52b53d1a1d4c54ad7208e6cc4220cf97378e1e5
