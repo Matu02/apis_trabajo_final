@@ -19,6 +19,8 @@ function signup_des(){
 }
 
 */
+
+
 //Se crea un js a parte para el login para tener mejor organización y más seguridad
 class Login {
     constructor() {  
