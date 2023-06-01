@@ -69,6 +69,7 @@ class AgendaBackendServer {
       const response = await fetch(url);//hace un fetch para traer la url. await hace que hasta que la linea de codigo anterior es decir la promesa no se ejecute. Todo se guarda en response
       const data = await response.json();//la respuesta se almacena en data y esta en json
 
+
       console.log('Datos recibidos desde el backend:', data);//me fijo en la consola si data llego bien
   
       res.json(data);//me da la respuesta y me tira data
