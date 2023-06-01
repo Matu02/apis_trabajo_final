@@ -20,6 +20,12 @@ h1 {
   margin-bottom: 20px;
 }
 
+p {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4e524c;
+}
+
 /* Estilos para el formulario de búsqueda */
 #search {
   margin-bottom: 20px;
@@ -48,11 +54,13 @@ h1 {
 /* Estilos para los resultados */
 #results {
   margin-top: 20px;
+
 }
 
 /* Estilos para los títulos de sección */
 h2 {
   margin-bottom: 10px;
+  margin-left: 50px;
 }
 
 /* Estilos para los hoteles */
@@ -60,6 +68,7 @@ h2 {
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
+
 }
 
 .hotel {
@@ -67,9 +76,11 @@ h2 {
   padding: 10px;
   background-color: #f7f7f7;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 10px;
   margin-right: 10px;
   flex-basis: calc(50% - 10px); /* Ajusta este valor según el número de hoteles que deseas mostrar en una fila */
+  height: 150px;
+  margin-left: 50px;
 }
 
 .hotel-name {
@@ -99,8 +110,10 @@ h2 {
   padding: 10px;
   background-color: #f7f7f7;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 10px;
   flex-basis: calc(50% - 10px); /* Ajusta este valor según el número de hoteles que deseas mostrar en una fila */
+  height: 150px;
+  margin-left: 50px;
 }
 
 .activity-name {
