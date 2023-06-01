@@ -10,7 +10,9 @@ body {
   width: 650px;
   height: 200px;
   border-radius: 10px;
+  margin-left: 50px;
 }
+
 
 /* Estilos para el título principal */
 h1 {
