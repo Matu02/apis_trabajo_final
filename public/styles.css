@@ -86,14 +86,17 @@ h2 {
 .hotel-name {
   font-size: 20px;
   font-weight: bold;
+  text-align: center;
 }
 
 .hotel-address {
   margin-bottom: 5px;
+  text-align: center;
 }
 
 .hotel-price {
   margin-bottom: 5px;
+  text-align: center;
 }
 
 /* Estilos para las actividades */
@@ -119,14 +122,17 @@ h2 {
 .activity-name {
   font-size: 20px;
   font-weight: bold;
+  text-align: center;
 }
 
 .activity-description {
   margin-bottom: 5px;
+  text-align: center;
 }
 
 .activity-price {
   margin-bottom: 5px;
+  text-align: center;
 }
 
 
