@@ -62,17 +62,17 @@ class AgendaBackendServer {
   //FETCH A MOCKACHINO
 
   async _doLookup(req, res) {
-    try {
-      const destination = req.params.destination;
+    try {//que intente hacer esta funcion y si salta error va a catch
+      const destination = req.params.destination;//en una constante destination trae (req) el parametro de la api llamado destination que es donde esta todo
       const url = `https://www.mockachino.com/46903af7-1a7d-4d/destinations/`;
   
-      const response = await fetch(url);
-      const data = await response.json();
+      const response = await fetch(url);//hace un fetch para traer la url. await hace que hasta que la linea de codigo anterior es decir la promesa no se ejecute. Todo se guarda en response
+      const data = await response.json();//la respuesta se almacena en data y esta en json
 
-      console.log('Datos recibidos desde el backend:', data);
+      console.log('Datos recibidos desde el backend:', data);//me fijo en la consola si data llego bien
   
-      res.json(data);
-    } catch (error) {
+      res.json(data);//me da la respuesta y me tira data
+    } catch (error) {//si hay un error salta esto
       console.error('Error al obtener los datos de Mockachino:', error);
       res.status(500).json({ error: 'Error al obtener los datos' });
     }
