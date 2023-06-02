@@ -32,7 +32,7 @@ class App {
     
   
     // Encontrar el destino con nombre "Chubut"
-    const desiredDestination = destinations.find(destination => destination.name.toLowerCase() === this.destinationName.toLowerCase());
+    const desiredDestination = destinations.find(destination => destination.name.toLowerCase() === this.destinationName.toLowerCase()); // Acá se ejecuta la acción principal del proyecto !!
     
     if (desiredDestination) {
       // Para mostrar el nombre del destino buscado
