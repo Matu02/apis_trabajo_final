@@ -63,17 +63,28 @@ class AgendaBackendServer {
 
   async _doLookup(req, res) {
     try {//que intente hacer esta funcion y si salta error va a catch
-      const destination = req.params.destination;//en una constante destination trae (req) el parametro de la api llamado destination que es donde esta todo
-      const url = `https://www.mockachino.com/46903af7-1a7d-4d/destinations/`;
+      const destination = req.params.destination; //la request hecha desde el frontend (lo q escribió el usuario) se guarda en la variable destination. Es solo un string con el nombre de la provincia q buscó el usuario
+      const normalizedDestination = destination.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\s/g, ""); //Normalizo el texto ingresado por el usuario, lo pone en minuscula, elimina espacios en el medio y elimina los acentos
+      const url = `https://www.mockachino.com/46903af7-1a7d-4d/destinations/`; //Guardo la url de mockachino en una variable
   
-      const response = await fetch(url);//hace un fetch para traer la url. await hace que hasta que la linea de codigo anterior es decir la promesa no se ejecute. Todo se guarda en response
-      const data = await response.json();//la respuesta se almacena en data y esta en json
+      const response = await fetch(url); //hace un fetch para traer la url. await hace que hasta que la linea de codigo anterior es decir la promesa no se ejecute. Todo se guarda en response
+      const data = await response.json(); //la respuesta recibida del fetch se almacena en data en fomarto JSON
 
+      //Filtro la info que se enviará al frontend según lo que haya pedido el usuario
+      const filteredData = data.destinations.find(destinations => { //Se busca dentro de las destinations que hay en mockachino (osea busca entre todas las provincias)
+        const normalizedName = destinations.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\s/g, ""); //Se normaliza el nombre del destino de igual forma que se normalizó antes el destino ingresado x el usuario
+        return normalizedName === normalizedDestination; //Si los datos nombres coinciden, se guarda el objeto de la provincia en filteredDara, sino filteredData quedará como undefined
+      });
 
-      console.log('Datos recibidos desde el backend:', data);//me fijo en la consola si data llego bien
-  
-      res.json(data);//me da la respuesta y me tira data
-    } catch (error) {//si hay un error salta esto
+      console.log('Datos recibidos y filtrados desde el backend:', filteredData); //me fijo en la consola si los datos llegaron y se filtraron bien
+
+      if (filteredData) { //Si la busqueda es exitosa,
+        res.json(filteredData); //Entonces se envía como JSON al frontend
+      } else {
+        res.status(404).json({ error: 'No se encontraron resultados' }); //Si no es exitosa se envía este error al frontend
+      }
+
+    } catch (error) {//si hay un error para buscar los datos salta esto
       console.error('Error al obtener los datos de Mockachino:', error);
       res.status(500).json({ error: 'Error al obtener los datos' });
     }

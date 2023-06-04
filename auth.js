@@ -35,7 +35,7 @@ class AuthorizationGoogle { //En esta clase ira todo lo relaciona a la autentica
         return done(null, profile);
     }
 
-    checkAuthenticated(req, res, next) {//Permite verificar que un endpoint este validado. Para validar users xej
+    checkAuthenticated(req, res, next) {//Verifica que el usuario este autenticado, la pongo como funcion intermedia en los endpoints, entonces si el usuario no esta autenticado no podrá acceder a ese endpoint
         if (req.isAuthenticated()) {
             return next();
         }
@@ -63,7 +63,7 @@ class AuthorizationLocal{ //En esta clase ira todo lo relaciona a la autenticaci
     }
 
     async _verify(username, password, done) {
-
+        const collection = db.collection("users"); //Guardo la collection users de mi base de datos en la variable collection
         const user = await collection.findOne({ username: username }); //Busco en esa collection un username q coincida con el username ingresado x el usuario. Eso se guarda en la variable user
     
         if (!user) {

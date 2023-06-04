@@ -2,6 +2,10 @@
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
+  background-image: url('imagenes/descarga.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 #box{

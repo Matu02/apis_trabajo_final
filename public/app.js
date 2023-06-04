@@ -21,20 +21,16 @@ class App {
     this.destinationName = input.value.trim(); //Se guarda el texto que ingresó el usuario, se le aplica el trim() por si el usuario puso espacios al escribir la palabra
     console.log(`Llego ${this.destinationName} a onSearch`);
     this.agenda.doLookup(this.destinationName) //Ejecuta la función doLookup con la destination ingresada. Esta función se creó en la clase agenda creada en agenda.js
-      .then(data => this._showResults(data))
+      .then(filteredData => this._showResults(filteredData))
     //Después de ejecutar doLookup, que se ejecute la función para mostrar los resultados
   }
 
-  _showResults(result) {
-    const destinations = result.destinations; // Acceder al arreglo de destinos
+  _showResults(result) { //Toma el resultado del this.agenda.doLookup, que sería el resultado del fetch al backend (el result ya viene filtrado x provincia desde el backend)
+    const desiredDestination = result; //Guarda el objeto de la provincia en la variable desiredDestination
     const resultsContainer = document.querySelector('#results');
     resultsContainer.classList.add('hidden');
     
-  
-    // Encontrar el destino con nombre "Chubut"
-    const desiredDestination = destinations.find(destination => destination.name.toLowerCase() === this.destinationName.toLowerCase()); // Acá se ejecuta la acción principal del proyecto !!
-    
-    if (desiredDestination) {
+    if (desiredDestination && !desiredDestination.error) { //Si existe una respuesta en desiredDestination y no hay un error en la busqueda, se crean los hoteles y actividades
       // Para mostrar el nombre del destino buscado
       new Destination(resultsContainer, desiredDestination);
       
@@ -46,7 +42,7 @@ class App {
 
       resultsContainer.classList.remove('hidden');
     } else {
-      alert(`No se encontró el destino ${this.destinationName}`);
+      alert(`No se encontró el destino "${this.destinationName}"`);
     }
   }
 }
