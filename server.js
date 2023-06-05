@@ -36,16 +36,7 @@ class AgendaBackendServer {
       successRedirect: '/', //Si la autenticación es correcta, te manda al home
       failureRedirect: '/login' //Si la autenticación es incorrecta, te manda de nuevo al login
     }));
-    app.get('/', this._authGoogle.checkAuthenticated, this._goHome); //Hace lo mismo que el get de arriba ¿?
-
-    app.post("/logout", (req, res) => {
-      req.logOut(err => {
-        if (err) {
-          console.log(err);
-        }
-      });
-      res.redirect("/login");
-    });     
+    app.get('/', this._authGoogle.checkAuthenticated, this._goHome); //Hace lo mismo que el get de arriba ¿?    
 
     // Hace que el server se inicie en el puerto 3000
     app.listen(3000, () => console.log('Listening on port 3000'));    
